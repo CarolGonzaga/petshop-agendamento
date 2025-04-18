@@ -1,0 +1,37 @@
+.container header {
+    padding: 0.75rem 1.25rem;
+}
+
+.container header h1 {
+    font: var(--font-title);
+    margin-bottom: .25rem;
+}
+
+.container header p {
+    font: var(--font-paragraph-medium);
+    color: var(--content-secondary);
+    margin-bottom: .75rem;
+}
+
+.container header > .input{
+    width: 60%;
+    height: 3rem;
+
+    border: 1px solid var(--border-primary);
+    padding-block: .75rem 1rem;
+    padding-inline: .75rem;
+    border-radius: .5rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.container header > .input input {   
+    font: var(--font-paragraph-medium);
+    color: var(--content-secondary);
+    background-color: transparent;
+    flex: 1;
+  
+    outline: none;
+    border: none;
+  }
