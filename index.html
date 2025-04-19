@@ -23,11 +23,12 @@
 
     <div class="container">
         <header>
-            <h1>Sua agenda</h1>
-
-            <p>
-                Aqui você pode ver todos os clientes e serviços agendados do dia.
-            </p>
+            <div class="title">
+                <h1>Sua agenda</h1>
+                <p>
+                    Aqui você pode ver todos os clientes e serviços agendados do dia.
+                </p>
+            </div>
 
             <div class="input">
                 <i><img src="./src/assets/calendar.svg" alt="Calendário" /></i>
@@ -121,10 +122,6 @@
                     </li>
                 </ul>
             </section>
-        </main>
-
-        <aside>
-            <button>Novo agendamento</button>
 
             <footer>
                 <p>
@@ -138,15 +135,19 @@
                     </strong>
                 </p>
             </footer>
+        </main>
+
+        <aside>
+            <button>Novo agendamento</button>
         </aside>
     </div>
 
     <div class="modal">
-        <div class="close">
-            <img src="src/assets/close.svg" alt="Fechar formulário">
-        </div>
-
         <form>
+            <div class="close">
+                <img src="src/assets/close.svg" alt="Fechar formulário">
+            </div>
+
             <header>
                 <h1>Agende um atendimento</h1>
                 <p>
