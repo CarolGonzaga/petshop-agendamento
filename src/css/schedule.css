@@ -85,12 +85,10 @@ main {
 }
 
 .schedule-info>p {
-    font: var(--font-paragraph-xs);
+    font: var(--font-paragraph-medium);
     color: var(--content-secondary);
-    letter-spacing: .05rem;
-    text-transform: uppercase;
 
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .schedule-period ul button {
@@ -99,26 +97,36 @@ main {
 
     margin-left: auto;
 
-    font: var(--font-paragraph-small);
+    font: var(--font-link);
     color: var(--content-tertiary);
+}
+
+.schedule-period ul button:hover {
+    color: var(--content-primary);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 footer {
     width: 100%;
     padding-block: .5rem;
 
-    font: var(--font-paragraph-small);
-    color: var(--content-tertiary);
+    font: var(--font-paragraph-xs);
+    color: var(--background-brand);
     text-align: center;
 }
 
 footer a:hover {
-    color: var(--content-secondary);
+    color: var(--background-highlights);
 }
 
 @media (width > 768px) {
     main {
         padding: 0;
+    }
+
+    .schedule-period header {
+        margin-bottom: 0.25rem;
     }
 
     .schedule-info>p {
@@ -127,6 +135,38 @@ footer a:hover {
         text-transform: none;
         letter-spacing: 0;
 
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    .schedule-period ul li {
+        width: 100%;
+        padding: 0;
+        padding-block: 1rem;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+    }
+
+    .schedule-period ul li+li {
+        padding-top: 1rem;
+    }
+
+    .schedule-info {
+        display: grid;
+        grid-template-columns: 50% auto;
+        align-items: center;
+        align-content: center;
+    }
+
+    .schedule-period ul button {
+        white-space: nowrap;
+    }
+
+    footer {
+        font: var(--font-paragraph-small);
     }
 }

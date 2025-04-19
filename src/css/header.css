@@ -19,8 +19,7 @@
     height: 3rem;
 
     border: 1px solid var(--border-primary);
-    padding-block: .75rem 1rem;
-    padding-inline: .75rem;
+    padding: 0.75rem;
     border-radius: .5rem;
 
     display: flex;
@@ -35,6 +34,14 @@
 
     outline: none;
     border: none;
+}
+
+.container>header .input:hover {
+    border-color: var(--border-secondary);
+}
+
+.container>header .input:focus-within {
+    border-color: var(--border-brand);
 }
 
 @media (width < 375px) {

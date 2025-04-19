@@ -169,6 +169,27 @@ form .button-wrapper button {
     text-transform: uppercase;
 }
 
+form .input:hover {
+    border-color: var(--border-secondary);
+}
+
+form .input:focus-within {
+    border-color: var(--border-brand);
+}
+
+form textarea {
+    transition: border-color 0.2s ease-in-out;
+}
+
+form textarea:hover:not(:focus) {
+    border-color: var(--border-secondary);
+}
+
+form textarea:focus {
+    border-color: var(--border-brand);
+    outline: none;
+}
+
 ::-webkit-calendar-picker-indicator {
     cursor: pointer;
     background: url("../assets/arrow-down.svg") no-repeat;

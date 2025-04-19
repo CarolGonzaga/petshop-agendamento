@@ -16,6 +16,7 @@
     --background-secondary: #1E1E1E;
     --background-tertiary: #23242C;
     --background-brand: #9485fa4d;
+    --background-highlights: #BDB4FA;
 
     /* Border */
     --border-primary: #3E3C41;
@@ -67,7 +68,7 @@ body {
 
 body.modal-open {
     overflow: hidden;
-  }
+}
 
 a {
     color: inherit;
@@ -93,6 +94,7 @@ a {
 
     z-index: 1100;
 }
+
 
 @media (width < 375px) {
     ::-webkit-scrollbar {

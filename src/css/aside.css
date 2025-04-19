@@ -22,18 +22,8 @@ aside button {
     text-transform: uppercase;
 }
 
-aside footer {
-    width: 100%;
-    padding-block: .5rem;
-
-    font: var(--font-paragraph-small);
-    font-size: 0.45rem;
-    color: var(--content-tertiary);
-    text-align: center;
-}
-
-aside footer a:hover {
-    color: var(--content-secondary);
+aside button:hover {
+    background-color: var(--background-highlights);
 }
 
 @media (width > 768px) {
@@ -41,7 +31,6 @@ aside footer a:hover {
         position: fixed;
         bottom: 2.0625rem;
         right: 1.875rem;
-        border: 1px solid saddlebrown;
         width: fit-content;
         background-color: transparent;
         padding: 0;
