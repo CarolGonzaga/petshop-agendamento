@@ -69,6 +69,10 @@ form.onsubmit = async (event) => {
         phoneInput.value = "";
         serviceDescription.value = "";
 
+        // Fecha o modal
+        document.querySelector(".modal").classList.remove("active");
+        document.body.classList.remove("modal-open");
+
         // Recarrega os agendamentos
         await loadHomeSchedules(document.getElementById("date").value);
         await loadAvailableHours(

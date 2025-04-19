@@ -19,6 +19,11 @@ export function schedulesShow({ dailySchedules }) {
         periodAfternoon.innerHTML = "";
         periodNight.innerHTML = "";
 
+        // Ordena os agendamentos pela hora (mais cedo para mais tarde)
+        dailySchedules.sort((a, b) => {
+            return new Date(a.when) - new Date(b.when);
+        });
+
         dailySchedules.forEach((schedule) => {
             const item = document.createElement("li");
             item.setAttribute("data-id", schedule.id);
@@ -33,7 +38,7 @@ export function schedulesShow({ dailySchedules }) {
                     </div>
                     <p>${schedule.description}</p>
                 </div>
-                <button>Remover agendamento</button>
+                <button class="cancel-btn">Remover agendamento</button>
             `;
 
             const hour = dayjs(schedule.when).hour();
