@@ -2,7 +2,6 @@ aside {
     width: 100%;
     background-color: var(--background-tertiary);
     padding: 1.125rem;
-    padding-bottom: 0;
 
     display: flex;
     flex-direction: column;
@@ -35,4 +34,16 @@ aside footer {
 
 aside footer a:hover {
     color: var(--content-secondary);
+}
+
+@media (width > 768px) {
+    aside {
+        position: fixed;
+        bottom: 2.0625rem;
+        right: 1.875rem;
+        border: 1px solid saddlebrown;
+        width: fit-content;
+        background-color: transparent;
+        padding: 0;
+    }
 }

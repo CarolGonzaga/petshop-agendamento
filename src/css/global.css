@@ -16,21 +16,12 @@
     --background-secondary: #1E1E1E;
     --background-tertiary: #23242C;
     --background-brand: #9485fa4d;
-    --background-highlights: #BDB4FA;
 
     /* Border */
     --border-primary: #3E3C41;
     --border-secondary: #86818C;
     --border-brand: #9282FA;
-    --border-divisor: #353339;
-
-    /* Accent */
-    --accent-blue: #027DF0;
-    --accent-blue-light: #16487A;
-    --accent-yellow: #F0DC02;
-    --accent-yellow-light: #756E1B;
-    --accent-orange: #F09102;
-    --accent-orange-light: #75501B;
+    --border-divisor: #2E2C30;
 
     /* Font Families */
     --font-inter: 'Inter', sans-serif;
@@ -41,6 +32,7 @@
 
     --font-paragraph-medium: 500 14px/24px var(--font-inter);
     --font-paragraph-small: 500 12px/16px var(--font-inter);
+    --font-paragraph-xs: 500 10px/16px var(--font-inter);
 
     --font-label-large: 700 16px/24px var(--font-inter);
     --font-label-medium: 700 14px/24px var(--font-inter);
@@ -73,6 +65,10 @@ body {
     justify-content: space-between;
 }
 
+body.modal-open {
+    overflow: hidden;
+  }
+
 a {
     color: inherit;
     text-decoration: none;
@@ -94,4 +90,20 @@ a {
 
     height: 3rem;
     width: 9.563rem;
+
+    z-index: 1100;
+}
+
+@media (width < 375px) {
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+@media (width > 768px) {
+    .container {
+        width: 100%;
+        max-width: 54.4375rem;
+        padding: 3.875rem 5rem 3.875rem;
+    }
 }

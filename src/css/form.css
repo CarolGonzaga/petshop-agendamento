@@ -1,20 +1,54 @@
+/* Efeito visual de fundo escurecido + embaçado */
 .modal {
-    position: relative;
-    margin: 4.75rem 1.25rem;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
 
-    background-color: var(--background-tertiary);
-    border-radius: 0.75rem;
+    background-color: #14151d4f;
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
+/* Ativa o modal */
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Caixa de formulário dentro do modal */
+.modal form {
+    background-color: var(--background-tertiary);
+    width: 100%;
+    max-width: 29.8125rem;
+    margin: 4.75rem 1.25rem;
+    padding: 2.5rem 1.25rem;
+
+    border-radius: 0.75rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25);
+
+    position: relative;
+    box-sizing: border-box;
+
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* Botão de fechar posicionado dentro do form */
 .modal .close {
     position: absolute;
     top: 1.25rem;
     right: 1.25rem;
+    cursor: pointer;
 }
 
-form {
-    padding: 2.5rem 1.25rem;
-}
 
 form header {
     padding: 0;
@@ -126,7 +160,6 @@ form .button-wrapper {
 form .button-wrapper button {
     background-color: var(--content-brand);
     padding: 0.75rem 1.5rem;
-    margin-left: auto;
 
     border: none;
     border-radius: .5rem;
@@ -139,4 +172,11 @@ form .button-wrapper button {
 ::-webkit-calendar-picker-indicator {
     cursor: pointer;
     background: url("../assets/arrow-down.svg") no-repeat;
+}
+
+@media (width < 375px) {
+    .modal form {
+        width: 96%;
+        margin: 4.75rem 0;
+    }
 }
