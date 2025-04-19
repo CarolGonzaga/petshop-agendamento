@@ -1,5 +1,7 @@
 import dayjs from "dayjs";
 import { scheduleNew } from "../../services/schedules-new.js";
+import { loadHomeSchedules } from "../schedules/load-home.js";
+import { loadAvailableHours } from "../schedules/load-form.js";
 
 const form = document.querySelector("form");
 
@@ -13,6 +15,8 @@ const timeSelect = document.getElementById("time");
 const inputDate = dayjs().format("YYYY-MM-DD");
 formDate.value = inputDate;
 formDate.min = inputDate;
+
+loadAvailableHours(inputDate);
 
 form.onsubmit = async (event) => {
     event.preventDefault();
@@ -58,7 +62,18 @@ form.onsubmit = async (event) => {
             description,
             when,
         });
-        
+
+        // Limpa os campos
+        clientNameInput.value = "";
+        petNameInput.value = "";
+        phoneInput.value = "";
+        serviceDescription.value = "";
+
+        // Recarrega os agendamentos
+        await loadHomeSchedules(document.getElementById("date").value);
+        await loadAvailableHours(
+            document.getElementById("schedule-date").value
+        );
     } catch (error) {
         console.log(error);
         alert("Erro: Não foi possível realizar o agendamento.");

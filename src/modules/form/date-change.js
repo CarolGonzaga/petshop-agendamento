@@ -1,6 +1,7 @@
-import { schedulesDay } from "../schedules/load.js";
+import { loadAvailableHours } from "../schedules/load-form.js"
+;
+const scheduleDateInput = document.getElementById("schedule-date");
 
-const formDate = document.getElementById("schedule-date");
-
-// Atualiza horários sempre que a data mudar
-formDate.onchange = () => schedulesDay();
+scheduleDateInput.addEventListener("change", () => {
+    loadAvailableHours(scheduleDateInput.value);
+});

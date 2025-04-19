@@ -35,7 +35,16 @@ export function schedulesShow({ dailySchedules }) {
                 </div>
                 <button>Remover agendamento</button>
             `;
-            periodMorning.append(item);
+
+            const hour = dayjs(schedule.when).hour();
+
+            if (hour <= 12) {
+                periodMorning.append(item);
+            } else if (hour >= 13 && hour < 19) {
+                periodAfternoon.append(item);
+            } else {
+                periodNight.append(item);
+            }
         });
     } catch (error) {
         console.log(error);

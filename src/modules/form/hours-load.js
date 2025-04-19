@@ -3,8 +3,9 @@ import { openingHours } from "../../utils/opening-hours.js";
 
 const timeSelect = document.getElementById("time");
 
-export function hoursLoad({ date }) {
+export function hoursLoad({ date, dailySchedules }) {
     const now = dayjs();
+    const unavailableHours = dailySchedules.map((schedule) => dayjs(schedule.when).format("HH:mm"))   
 
     // Limpa o select
     timeSelect.innerHTML = "";
@@ -19,8 +20,9 @@ export function hoursLoad({ date }) {
         const [h, m] = hour.split(":");
         const selectedDateTime = dayjs(date).hour(Number(h)).minute(Number(m));
         const isHourPast = selectedDateTime.isBefore(now);
-
-        if (isHourPast) return;
+        const isHourUnavailable = unavailableHours.includes(hour);
+                
+        if (isHourPast || isHourUnavailable) return;
 
         const option = document.createElement("option");
         option.value = hour;
