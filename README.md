@@ -10,7 +10,7 @@
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-objetivo">Objetivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="[https://hairday-agendamento.vercel.app/](https://petshop-agendamento.vercel.app/)" target="_blank">Acesse o Projeto</a>
+  <a href="https://petshop-agendamento.vercel.app" target="_blank">Acesse o Projeto</a>
 </p>
 
 </br>
